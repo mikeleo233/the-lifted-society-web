@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lifted Society — Honest, practical books for Africans building better lives</title>
+<meta name="description" content="The Lifted Society publishes honest, practical books for Africans and the diaspora. Books about money, family, marriage, and the quiet work of building better lives.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="The Lifted Society">
+<meta property="og:description" content="Honest, practical books for Africans and the diaspora.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theliftedsociety.org">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="shared/cover-small.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Shared styles -->
+<link rel="stylesheet" href="shared/styles.css">
+
+<style>
+/* Homepage-specific styles */
+
+/* Hero */
+.home-hero {
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 120px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(201, 161, 74, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.home-hero h1 {
+    margin-bottom: 28px;
+    color: var(--cream);
+    position: relative;
+}
+
+.home-hero h1 .accent {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.home-hero .tagline {
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 400;
+    color: rgba(245, 240, 230, 0.85);
+    max-width: 720px;
+    margin: 0 auto 16px;
+    line-height: 1.5;
+    position: relative;
+}
+
+.home-hero .signature {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gold);
+    margin-top: 28px;
+    position: relative;
+}
+
+/* Section heading style */
+.section-heading {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-heading .label {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+.bg-green .section-heading .label {
+    color: var(--gold-bright);
+}
+
+/* Current title card */
+.current-title {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .current-title {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 72px;
+    }
+}
+
+.current-title-cover {
+    text-align: center;
+}
+
+.current-title-cover img {
+    max-width: 100%;
+    width: 320px;
+    height: auto;
+    box-shadow: var(--shadow-strong);
+    border-radius: 2px;
+    transition: transform 0.4s ease;
+}
+
+.current-title-cover img:hover {
+    transform: translateY(-6px);
+}
+
+.current-title-info {
+    text-align: left;
+}
+
+.current-title-info .badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--green-deep);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.current-title-info h3 {
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+    margin-bottom: 12px;
+    color: var(--green-deep);
+}
+
+.current-title-info .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.current-title-info p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    color: var(--text-dark);
+}
+
+.current-title-info .price-line {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+.current-title-info .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--green-deep);
+}
+
+/* Coming soon grid */
+.coming-soon-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media (min-width: 700px) {
+    .coming-soon-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+}
+
+.coming-soon-card {
+    background: rgba(245, 240, 230, 0.06);
+    border: 1px solid rgba(201, 161, 74, 0.2);
+    padding: 40px 32px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.coming-soon-card:hover {
+    border-color: var(--gold);
+    background: rgba(245, 240, 230, 0.09);
+    transform: translateY(-4px);
+}
+
+.coming-soon-card .label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+}
+
+.coming-soon-card h4 {
+    font-size: 1.55rem;
+    color: var(--cream);
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.coming-soon-card .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(245, 240, 230, 0.7);
+    margin-bottom: 18px;
+    line-height: 1.4;
+}
+
+.coming-soon-card p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(245, 240, 230, 0.75);
+    margin-bottom: 0;
+}
+
+/* About section */
+.about-section {
+    background: var(--cream-warm);
+}
+
+.about-content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+}
+
+.about-content p:last-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--green-deep);
+    margin-bottom: 0;
+}
+
+/* Stay connected */
+.connect-section {
+    background: var(--green-darker);
+    color: var(--cream);
+}
+
+.connect-content {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.connect-content p {
+    font-size: 1.1rem;
+    color: rgba(245, 240, 230, 0.85);
+    margin-bottom: 32px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: rgba(245, 240, 230, 0.08);
+    color: var(--cream);
+    border: 1px solid rgba(201, 161, 74, 0.3);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+}
+
+.social-btn:hover {
+    background: var(--gold);
+    color: var(--green-deep);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- NAVIGATION                                   -->
+<!-- ============================================ -->
+<nav class="nav">
+<div class="nav-container">
+<a href="/" class="nav-brand">The Lifted <span class="accent">Society</span></a>
+<ul class="nav-links">
+<li><a href="#books">Books</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#connect">Connect</a></li>
+</ul>
+</div>
+</nav>
+
+<!-- ============================================ -->
+<!-- HERO                                         -->
+<!-- ============================================ -->
+<section class="home-hero">
+<div class="container">
+<h1>The <span class="accent">Lifted</span> Society</h1>
+<p class="tagline">Honest, practical books for Africans and the diaspora building better lives.</p>
+<p class="signature">No hype. No shortcuts. Just what works.</p>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- CURRENT TITLE — From Salary to Wealth        -->
+<!-- ============================================ -->
+<section class="section bg-cream" id="books">
+<div class="container">
+<div class="section-heading fade-in">
+<span class="label">Available Now</span>
+<h2>Our first title</h2>
+</div>
+<div class="current-title fade-in">
+<div class="current-title-cover">
+<a href="from-salary-to-wealth/">
+<img src="from-salary-to-wealth/cover.png" alt="From Salary to Wealth book cover" loading="lazy">
+</a>
+</div>
+<div class="current-title-info">
+<span class="badge">Available Now</span>
+<h3>From Salary to Wealth</h3>
+<p class="subtitle">How Ordinary Ghanaians Build Real Wealth on a Salary</p>
+<p>The practical financial framework written specifically for the Ghanaian salary worker and the African diaspora. Eleven chapters. Six practical appendices. A 30-day starter plan and a 10-year roadmap with specific cedi milestones. Built around real Ghanaian conditions and real case studies of ordinary people who have walked the path.</p>
+<div class="price-line">
+<span class="price">GHS 45</span>
+<span>· 182 pages · Instant download</span>
+</div>
+<a href="from-salary-to-wealth/" class="btn btn-primary btn-large">Read more →</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- ABOUT                                        -->
+<!-- ============================================ -->
+<section class="section about-section" id="about">
+<div class="container">
+<div class="section-heading fade-in">
+<span class="label">Our Mission</span>
+<h2>About The Lifted Society</h2>
+</div>
+<div class="about-content fade-in">
+<p>The Lifted Society publishes honest, practical books for Africans and the diaspora at every stage of life. Books about money, family, marriage, recovery, aging, faith, and the quiet work of becoming the person you want to be.</p>
+<p>We exist because the working African deserves better than imported personal development advice that was never built for their reality. We publish books that take real lives seriously, written from real lives, for real lives.</p>
+<p>No hype. No shortcuts. Just what works.</p>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- STAY CONNECTED                               -->
+<!-- ============================================ -->
+<section class="section connect-section" id="connect">
+<div class="container">
+<div class="connect-content fade-in">
+<div class="section-heading">
+<span class="label">Stay Connected</span>
+<h2 style="color: var(--cream);">Join the community</h2>
+</div>
+<p>Follow us for new book announcements, launch-day offers, and occasional honest writing on money, life, and building something real.</p>
+<div class="social-buttons">
+<a href="https://facebook.com/theliftedsociety" class="social-btn" target="_blank" rel="noopener">Facebook</a>
+<a href="https://instagram.com/theliftedsociety" class="social-btn" target="_blank" rel="noopener">Instagram</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- FOOTER                                       -->
+<!-- ============================================ -->
+<footer class="footer">
+<div class="footer-content">
+<div class="footer-brand">The Lifted <span class="accent">Society</span></div>
+<p class="footer-tagline">Honest, practical books for Africans and the diaspora.</p>
+<div class="footer-social">
+<a href="https://facebook.com/theliftedsociety" target="_blank" rel="noopener">Facebook</a>
+<a href="https://instagram.com/theliftedsociety" target="_blank" rel="noopener">Instagram</a>
+</div>
+<div class="footer-bottom">
+© 2026 The Lifted Society · All rights reserved · theliftedsociety.org
+</div>
+</div>
+</footer>
+
+<!-- Scroll animation script -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

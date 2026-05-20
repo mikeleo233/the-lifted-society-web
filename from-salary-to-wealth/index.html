@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Salary to Wealth — How Ordinary Ghanaians Build Real Wealth on a Salary</title>
+<meta name="description" content="The practical financial framework written specifically for the Ghanaian salary worker and the African diaspora. 11 chapters. 182 pages. GHS 45. Instant download.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="From Salary to Wealth">
+<meta property="og:description" content="How Ordinary Ghanaians Build Real Wealth on a Salary. 182 pages. GHS 45. Instant download.">
+<meta property="og:image" content="cover.png">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://theliftedsociety.org/from-salary-to-wealth">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="cover.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Shared styles -->
+<link rel="stylesheet" href="../shared/styles.css">
+
+<!-- ============================================ -->
+<!-- FACEBOOK PIXEL — PASTE YOUR PIXEL ID BELOW   -->
+<!-- ============================================ -->
+<!-- Replace 2895366437482752 with your actual Facebook Pixel ID -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2895366437482752');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2895366437482752&ev=PageView&noscript=1"/></noscript>
+<!-- ============================================ -->
+<!-- END FACEBOOK PIXEL                           -->
+<!-- ============================================ -->
+
+<style>
+/* Landing page specific styles */
+
+/* MINIMAL NAV — no escape links */
+.nav-minimal .nav-container {
+    justify-content: center;
+}
+
+.nav-minimal .nav-brand {
+    cursor: default;
+    pointer-events: none;
+    font-size: 20px;
+}
+
+/* MINIMAL FOOTER — no social links */
+.footer-minimal .footer-tagline {
+    margin-bottom: 24px;
+}
+
+.footer-minimal .footer-bottom {
+    padding-top: 0;
+    border-top: none;
+}
+
+/* SUBTLE PULSE on primary order buttons (catches the eye without being loud) */
+@keyframes gentlePulse {
+    0%, 100% { box-shadow: 0 8px 32px rgba(26, 61, 46, 0.15), 0 0 0 0 rgba(201, 161, 74, 0.4); }
+    50% { box-shadow: 0 8px 32px rgba(26, 61, 46, 0.15), 0 0 0 12px rgba(201, 161, 74, 0); }
+}
+
+.btn-pulse {
+    animation: gentlePulse 2.4s ease-in-out infinite;
+}
+
+.btn-pulse:hover {
+    animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-pulse { animation: none; }
+}
+
+/* STICKY MOBILE ORDER BAR — appears after scrolling past hero */
+.mobile-sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--green-darker);
+    border-top: 1px solid rgba(201, 161, 74, 0.3);
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-sticky-cta.visible {
+    transform: translateY(0);
+}
+
+.mobile-sticky-cta .sticky-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.mobile-sticky-cta .sticky-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+.mobile-sticky-cta .sticky-detail {
+    font-size: 11px;
+    color: rgba(245, 240, 230, 0.65);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.mobile-sticky-cta .btn {
+    padding: 14px 24px;
+    font-size: 14px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+/* Only show sticky bar on mobile */
+@media (min-width: 768px) {
+    .mobile-sticky-cta {
+        display: none !important;
+    }
+}
+
+/* Add padding to bottom of page on mobile so sticky bar doesn't cover footer */
+@media (max-width: 767px) {
+    body {
+        padding-bottom: 80px;
+    }
+}
+
+/* SOURCE CREDIBILITY CALLOUT — honest social proof */
+.credibility-callout {
+    max-width: 620px;
+    margin: 32px auto;
+    text-align: center;
+    padding: 20px 28px;
+    background: rgba(201, 161, 74, 0.06);
+    border-top: 1px solid rgba(201, 161, 74, 0.3);
+    border-bottom: 1px solid rgba(201, 161, 74, 0.3);
+}
+
+.credibility-callout .label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.credibility-callout p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.55;
+    color: var(--cream);
+    margin: 0;
+}
+
+/* When the callout is on a cream background (price section), invert colors */
+.bg-cream-section .credibility-callout p,
+.price-reframe .credibility-callout p {
+    color: var(--green-deep);
+}
+
+.bg-cream-section .credibility-callout,
+.price-reframe .credibility-callout {
+    background: rgba(26, 61, 46, 0.04);
+    border-color: rgba(201, 161, 74, 0.5);
+}
+
+/* "WHAT HAPPENS NEXT" reinforcement near the price section */
+.what-happens-next {
+    max-width: 480px;
+    margin: 24px auto;
+    background: rgba(26, 61, 46, 0.04);
+    border-left: 3px solid var(--gold);
+    padding: 20px 24px;
+    text-align: left;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.what-happens-next .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green-deep);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.what-happens-next ol {
+    list-style: none;
+    counter-reset: step;
+    padding: 0;
+    margin: 0;
+}
+
+.what-happens-next li {
+    counter-increment: step;
+    position: relative;
+    padding: 6px 0 6px 32px;
+    line-height: 1.5;
+}
+
+.what-happens-next li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 22px;
+    height: 22px;
+    background: var(--green-deep);
+    color: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-darker) 100%);
+    color: var(--cream);
+    padding: 60px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(201, 161, 74, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+}
+
+/* Mobile: cover appears FIRST (above the headline), centered layout */
+.hero-text {
+    text-align: center;
+    order: 2;
+}
+
+.hero-cover {
+    order: 1;
+    text-align: center;
+    position: relative;
+}
+
+@media (min-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1.3fr 1fr;
+        gap: 80px;
+    }
+    .hero {
+        padding: 100px 0 120px;
+    }
+    /* Desktop: text returns to the left, cover to the right */
+    .hero-text {
+        text-align: left;
+        order: 0;
+    }
+    .hero-cover {
+        order: 0;
+    }
+}
+
+.hero-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6.5vw, 4.8rem);
+    font-weight: 600;
+    line-height: 1.05;
+    margin-bottom: 28px;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+}
+
+.hero-headline .accent {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.hero-subhead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+    font-weight: 400;
+    line-height: 1.45;
+    color: rgba(245, 240, 230, 0.92);
+    margin-bottom: 36px;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 900px) {
+    .hero-subhead {
+        margin-left: 0;
+    }
+}
+
+.hero-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    color: rgba(245, 240, 230, 0.75);
+    font-size: 14px;
+}
+
+@media (min-width: 900px) {
+    .hero-meta {
+        justify-content: flex-start;
+    }
+}
+
+.hero-meta .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.hero-meta .meta-sep {
+    color: rgba(245, 240, 230, 0.3);
+}
+
+.hero-meta-detail {
+    font-size: 14px;
+    letter-spacing: 0.04em;
+}
+
+.hero-trust {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0 28px;
+    font-size: 13px;
+    color: rgba(245, 240, 230, 0.7);
+    letter-spacing: 0.02em;
+}
+
+.hero-trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hero-trust-item::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+}
+
+@media (min-width: 900px) {
+    .hero-trust {
+        justify-content: flex-start;
+    }
+}
+
+.hero-reassurance {
+    margin-top: 18px;
+    font-size: 13px;
+    color: rgba(245, 240, 230, 0.6);
+    letter-spacing: 0.05em;
+}
+
+.hero-cover img {
+    max-width: 100%;
+    width: 320px;
+    height: auto;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    transition: transform 0.5s ease;
+}
+
+@media (min-width: 900px) {
+    .hero-cover img {
+        width: 440px;
+    }
+}
+
+.hero-cover img:hover {
+    transform: translateY(-8px) rotate(-1deg);
+}
+
+/* GUT-PUNCH SECTION */
+.gut-punch {
+    background: var(--cream);
+    padding: 100px 0;
+}
+
+.gut-punch-content {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gut-punch h2 {
+    color: var(--green-deep);
+    margin-bottom: 48px;
+}
+
+.gut-punch-list {
+    list-style: none;
+    margin-bottom: 48px;
+    text-align: left;
+}
+
+.gut-punch-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(26, 61, 46, 0.08);
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--text-dark);
+}
+
+.gut-punch-list li:last-child {
+    border-bottom: none;
+}
+
+.gut-punch-list .check {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--green-deep);
+    color: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.gut-punch-closer {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    line-height: 1.4;
+    color: var(--green-deep);
+    font-style: italic;
+    margin-top: 8px;
+}
+
+.gut-punch-closer strong {
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* WHAT'S INSIDE */
+.inside {
+    background: var(--green-deep);
+    color: var(--cream);
+}
+
+.inside .section-heading {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.inside h2 {
+    color: var(--cream);
+    margin-bottom: 16px;
+}
+
+.inside .lede {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin-bottom: 0;
+}
+
+.pillars {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+    .pillars {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.pillar {
+    background: rgba(245, 240, 230, 0.06);
+    border: 1px solid rgba(201, 161, 74, 0.2);
+    padding: 36px 28px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.pillar:hover {
+    background: rgba(245, 240, 230, 0.1);
+    border-color: var(--gold);
+    transform: translateY(-4px);
+}
+
+.pillar-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+    color: var(--gold);
+    display: block;
+}
+
+.pillar-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.4s ease;
+}
+
+.pillar:hover .pillar-icon svg {
+    transform: scale(1.08);
+}
+
+.pillar-num {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--gold);
+    opacity: 0.6;
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+}
+
+.pillar h3 {
+    color: var(--cream);
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+    line-height: 1.2;
+}
+
+.pillar p {
+    color: rgba(245, 240, 230, 0.75);
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 0;
+}
+
+.inside-list {
+    max-width: 600px;
+    margin: 0 auto 48px;
+    list-style: none;
+    background: rgba(245, 240, 230, 0.05);
+    padding: 36px 32px;
+    border-radius: 4px;
+    border-left: 3px solid var(--gold);
+}
+
+.inside-list li {
+    padding: 10px 0;
+    color: var(--cream);
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.inside-list li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.cta-wrapper {
+    text-align: center;
+}
+
+/* BLACK TAX SECTION */
+.black-tax {
+    background: var(--cream-warm);
+    padding: 100px 0;
+}
+
+.black-tax-content {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.black-tax .section-heading .label {
+    color: var(--green-deep);
+}
+
+.black-tax h2 {
+    color: var(--green-deep);
+    font-style: italic;
+    line-height: 1.2;
+    margin-bottom: 36px;
+}
+
+.black-tax p {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+}
+
+.black-tax .closer {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--green-deep);
+    line-height: 1.45;
+    margin-top: 32px;
+    padding: 24px 32px;
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+/* CHARACTERS */
+.characters {
+    background: var(--green-darker);
+    color: var(--cream);
+}
+
+.characters h2 {
+    color: var(--cream);
+}
+
+.characters .lede {
+    color: var(--gold);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+    .character-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.character-card {
+    background: rgba(245, 240, 230, 0.05);
+    border: 1px solid rgba(201, 161, 74, 0.2);
+    padding: 36px 28px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.character-card:hover {
+    border-color: var(--gold);
+    background: rgba(245, 240, 230, 0.08);
+    transform: translateY(-4px);
+}
+
+.character-card .role {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.character-card h3 {
+    font-size: 1.7rem;
+    color: var(--cream);
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.character-card p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(245, 240, 230, 0.8);
+    margin-bottom: 0;
+}
+
+.character-closer {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--gold);
+}
+
+/* PRICE REFRAME */
+.price-reframe {
+    background: var(--cream);
+    padding: 100px 0;
+}
+
+.price-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.price-content h2 {
+    color: var(--green-deep);
+    margin-bottom: 36px;
+}
+
+.price-content p {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+}
+
+.price-display {
+    margin: 48px 0;
+    padding: 40px;
+    background: var(--green-deep);
+    color: var(--cream);
+    border-radius: 4px;
+}
+
+.price-display .big {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.price-display .small {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 230, 0.7);
+}
+
+/* GUARANTEE */
+.guarantee {
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 100px 0;
+}
+
+.guarantee-content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.guarantee h2 {
+    color: var(--cream);
+    margin-bottom: 36px;
+}
+
+.guarantee h2 .accent {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.guarantee p {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: rgba(245, 240, 230, 0.9);
+    margin-bottom: 24px;
+}
+
+.guarantee .closer {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--gold);
+    margin-top: 32px;
+}
+
+/* AUTHOR */
+.author-section {
+    background: var(--cream-warm);
+    padding: 80px 0;
+}
+
+.author-content {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.author-content h2 {
+    color: var(--green-deep);
+    margin-bottom: 32px;
+    font-size: 2rem;
+}
+
+.author-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-dark);
+    margin-bottom: 18px;
+}
+
+.author-content p.tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--green-deep);
+    margin-top: 24px;
+}
+
+/* FINAL CTA */
+.final-cta {
+    background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-darker) 100%);
+    color: var(--cream);
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.final-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(201, 161, 74, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.final-cta-content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.final-cta h2 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    color: var(--cream);
+    margin-bottom: 28px;
+    line-height: 1.2;
+}
+
+.final-cta h2 .accent {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.final-cta .closer-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: rgba(245, 240, 230, 0.85);
+    margin-bottom: 48px;
+}
+
+.final-cta-meta {
+    margin-top: 32px;
+    font-size: 13px;
+    color: rgba(245, 240, 230, 0.6);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- NAVIGATION (minimal, no escape links — landing page is focused on conversion) -->
+<!-- ============================================ -->
+<nav class="nav nav-minimal">
+<div class="nav-container">
+<span class="nav-brand">The Lifted <span class="accent">Society</span></span>
+</div>
+</nav>
+
+<!-- ============================================ -->
+<!-- SECTION 1: HERO                              -->
+<!-- ============================================ -->
+<section class="hero">
+<div class="container">
+<div class="hero-grid">
+<div class="hero-text">
+<h1 class="hero-headline">You are not broke because you do not earn <span class="accent">enough.</span></h1>
+<p class="hero-subhead">You are broke because no one taught you what to do with the salary you already earn.</p>
+<div class="hero-meta">
+<span class="price">GHS 45</span>
+<span class="meta-sep">·</span>
+<span class="hero-meta-detail">182 pages</span>
+</div>
+<div class="hero-trust">
+<span class="hero-trust-item">Pay with MoMo or card</span>
+<span class="hero-trust-item">Instant download</span>
+<span class="hero-trust-item">Read on any device</span>
+</div>
+<!-- ORDER NOW BUTTON #1 — REPLACE href WITH YOUR PAYSTACK LINK -->
+<a href="https://paystack.shop/pay/from-salary-to-wealth-ebook" class="btn btn-primary btn-large btn-pulse" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout');">Order Now — GHS 45</a>
+<p class="hero-reassurance">Yours forever · No subscription</p>
+</div>
+<div class="hero-cover">
+<img src="cover.png" alt="From Salary to Wealth — book cover" loading="eager">
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 2: GUT-PUNCH                         -->
+<!-- ============================================ -->
+<section class="gut-punch">
+<div class="container">
+<div class="gut-punch-content fade-in">
+<h2>If any of this sounds like you, this book was written for you.</h2>
+<ul class="gut-punch-list">
+<li><span class="check">✓</span><span>You earn a respectable salary but you cannot tell where it goes each month.</span></li>
+<li><span class="check">✓</span><span>You spend more on funeral contributions than you save.</span></li>
+<li><span class="check">✓</span><span>You support family members who never seem to need less.</span></li>
+<li><span class="check">✓</span><span>You feel guilty for wanting more without knowing what "more" looks like.</span></li>
+<li><span class="check">✓</span><span>You are tired of personal finance advice clearly written for someone in another country.</span></li>
+</ul>
+<p class="gut-punch-closer"><strong>You are not alone. You are not foolish. You are not behind.</strong><br>You just need a plan that was built for your actual life.</p>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 3: WHAT'S INSIDE                     -->
+<!-- ============================================ -->
+<section class="section inside">
+<div class="container">
+<div class="section-heading fade-in">
+<span class="label">What You'll Get</span>
+<h2>A complete, practical system</h2>
+<p class="lede">Not theory. Not motivation. A step-by-step plan you can start this week.</p>
+</div>
+<div class="pillars fade-in">
+<div class="pillar">
+<span class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="20" cy="20" r="13"/><line x1="29.5" y1="29.5" x2="40" y2="40"/><path d="M16 14 v12 M14.5 18 h7 M14.5 22 h7"/></svg></span>
+<div class="pillar-num">CHAPTER 01</div>
+<h3>The Honest Audit</h3>
+<p>The chapter that shows you exactly where your money goes each month, in actual cedis, with no comfortable illusions.</p>
+</div>
+<div class="pillar">
+<span class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="6" rx="1"/><rect x="8" y="20" width="32" height="6" rx="1"/><rect x="8" y="30" width="32" height="6" rx="1"/><line x1="14" y1="13" x2="20" y2="13"/><line x1="14" y1="23" x2="20" y2="23"/><line x1="14" y1="33" x2="20" y2="33"/></svg></span>
+<div class="pillar-num">CHAPTERS 03 — 05</div>
+<h3>The System That Survives Ghanaian Life</h3>
+<p>A four-layer savings structure built around real Ghanaian reality. Annual rent, family obligations, the dollar question, all of it.</p>
+</div>
+<div class="pillar">
+<span class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><polyline points="6,38 14,30 22,32 30,20 38,14"/><polygon points="38,8 39.5,12.5 44,12.5 40.5,15.5 42,20 38,17 34,20 35.5,15.5 32,12.5 36.5,12.5" stroke-width="1.2"/><line x1="6" y1="42" x2="42" y2="42" stroke-dasharray="2 3" opacity="0.5"/></svg></span>
+<div class="pillar-num">CHAPTER 11</div>
+<h3>The 10-Year Plan</h3>
+<p>A sprint-by-sprint roadmap from where you are now to financial freedom on a Ghanaian salary, with specific cedi milestones.</p>
+</div>
+</div>
+<ul class="inside-list fade-in">
+<li>11 full chapters covering every part of building wealth</li>
+<li>6 practical appendices including templates and scripts</li>
+<li>A 30-day starter plan, day by day</li>
+<li>7 ready-made conversation scripts for hard money talks</li>
+<li>Built around today's Ghanaian economy, not imported foreign advice</li>
+<li>182 pages of patient, practical guidance</li>
+</ul>
+<div class="credibility-callout fade-in">
+<span class="label">Grounded in reality</span>
+<p>Built around today's Ghanaian economy. Real salaries. Real local prices. Real case studies of teachers, nurses, customs officers, and corporate staff who built wealth on ordinary incomes.</p>
+</div>
+<div class="cta-wrapper fade-in">
+<!-- ORDER NOW BUTTON #2 — SAME LINK -->
+<a href="https://paystack.shop/pay/from-salary-to-wealth-ebook" class="btn btn-primary btn-large btn-pulse" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout');">Order Now — GHS 45</a>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 4: BLACK TAX PROMISE                 -->
+<!-- ============================================ -->
+<section class="black-tax">
+<div class="container">
+<div class="black-tax-content fade-in">
+<div class="section-heading">
+<span class="label">What Makes This Book Different</span>
+</div>
+<h2>The conversation no one has been brave enough to write down.</h2>
+<p>Most personal finance books pretend the black tax does not exist. This one does not.</p>
+<p>An entire chapter is dedicated to one of the hardest financial pressures in Ghanaian life. Not advice on how to refuse your family. Advice on how to give sustainably, with structure, with self-respect, and with the actual scripts for the hard conversations you have been avoiding.</p>
+<p class="closer">If this chapter alone helps you have one honest conversation, this book has already paid for itself a hundred times over.</p>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 5: CHARACTERS / PROOF                -->
+<!-- ============================================ -->
+<section class="section characters">
+<div class="container">
+<div class="section-heading fade-in">
+<span class="label">Real People · Real Numbers</span>
+<h2>Real Ghanaians on real salaries.</h2>
+<p class="lede">Three case studies that prove what is possible.</p>
+</div>
+<div class="character-grid fade-in">
+<div class="character-card">
+<div class="role">The Teacher</div>
+<h3>Grace Pokuaa</h3>
+<p>A GES teacher in Koforidua earning GHS 3,200 a month. Discovers in Chapter 1 that her household has been quietly leaking GHS 50 every month. Chapter by chapter, she rebuilds her financial life.</p>
+</div>
+<div class="character-card">
+<div class="role">The Nurse</div>
+<h3>Sister Patience</h3>
+<p>A nurse at Ridge Hospital. Bought her first plot of land in 2018 for GHS 35,000. By 2026, she earns GHS 38,400 a year in rental income from a property she built one stage at a time.</p>
+</div>
+<div class="character-card">
+<div class="role">The Customs Officer</div>
+<h3>Stephen Mensah</h3>
+<p>Started in 2014 on a GHS 2,800 salary. Today, after 10 years of patient, unglamorous work, his net worth is GHS 1.2 million. He never inherited anything. He followed a plan.</p>
+</div>
+</div>
+<p class="character-closer fade-in">You can be next.</p>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 6: PRICE REFRAME                     -->
+<!-- ============================================ -->
+<section class="price-reframe">
+<div class="container">
+<div class="price-content fade-in">
+<div class="section-heading">
+<span class="label">A Note on the Price</span>
+</div>
+<h2>Why GHS 45?</h2>
+<p>Because this book is not a luxury product. It is a tool, written for the working person.</p>
+<p>Forty-five cedis is roughly the cost of one plate of waakye, one Bolt across Accra, one MTN bundle. For that, you get the complete financial system that took years to write and is built on decades of observation.</p>
+<div class="price-display">
+<div class="big">GHS 45</div>
+<div class="small">One book · One complete system · Yours forever</div>
+</div>
+<p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: var(--green-deep);">The book is GHS 45 because it should reach the people who need it most.</p>
+<div class="what-happens-next">
+<span class="label">What happens after you order</span>
+<ol>
+<li>You pay GHS 45 via MoMo, card, or bank transfer on the next page.</li>
+<li>You are taken straight to your download page.</li>
+<li>Download the book and start reading on your phone, tablet, or computer.</li>
+</ol>
+</div>
+<div class="cta-wrapper" style="margin-top: 32px;">
+<!-- ORDER NOW BUTTON #3 — SAME LINK -->
+<a href="https://paystack.shop/pay/from-salary-to-wealth-ebook" class="btn btn-dark btn-large btn-pulse" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout');">Order Now — GHS 45</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 7: GUARANTEE                         -->
+<!-- ============================================ -->
+<section class="guarantee">
+<div class="container">
+<div class="guarantee-content fade-in">
+<h2>The <span class="accent">Honest</span> Guarantee</h2>
+<p>This book will not promise you wealth in six months. Nobody can promise that, and anyone who does is lying to you.</p>
+<p>What this book will promise is this: if you read it and complete the actions at the end of each chapter, in twelve months your financial life will look different. Better organized. More intentional. More peaceful. More prepared for the decade ahead.</p>
+<p>If, after thirty days of doing the work, you genuinely feel the book did not give you a clear path forward, send a message through theliftedsociety.org and you will get your GHS 45 back. No questions, no forms, no pressure.</p>
+<p class="closer">The risk on this transaction is mine, not yours.</p>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 8: ABOUT AUTHOR                      -->
+<!-- ============================================ -->
+<section class="author-section">
+<div class="container">
+<div class="author-content fade-in">
+<h2>About Emmanuel Adu-Gyamfi</h2>
+<p>Emmanuel Adu-Gyamfi spent fifteen years on a salary before he understood how wealth actually works. A former civil servant turned financial educator, he writes for the millions of people who were never taught what to do with a pay slip beyond spending it.</p>
+<p class="tagline"><em>From Salary to Wealth</em> is his first book.</p>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 9: FINAL CTA                         -->
+<!-- ============================================ -->
+<section class="final-cta">
+<div class="container">
+<div class="final-cta-content fade-in">
+<h2>The next ten years of your life are <span class="accent">already being written.</span></h2>
+<p class="closer-text">The only question is whether you are writing them, or whether they are writing themselves.</p>
+<!-- ORDER NOW BUTTON #4 — SAME LINK -->
+<a href="https://paystack.shop/pay/from-salary-to-wealth-ebook" class="btn btn-primary btn-large btn-pulse" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout');">Order Now — GHS 45</a>
+<p class="final-cta-meta">Instant download · Read on any device · Yours forever</p>
+</div>
+</div>
+</section>
+
+<!-- ============================================ -->
+<!-- FOOTER (minimal — no clickable escapes on the landing page) -->
+<!-- ============================================ -->
+<footer class="footer footer-minimal">
+<div class="footer-content">
+<div class="footer-brand">The Lifted <span class="accent">Society</span></div>
+<p class="footer-tagline">Honest, practical books for Africans and the diaspora.</p>
+<div class="footer-bottom">
+© 2026 Published by The Lifted Society · theliftedsociety.org
+</div>
+</div>
+</footer>
+
+<!-- STICKY MOBILE ORDER BAR — appears after scrolling past hero -->
+<div class="mobile-sticky-cta" id="stickyCta" aria-hidden="true">
+<div class="sticky-info">
+<span class="sticky-price">GHS 45</span>
+<span class="sticky-detail">Instant download</span>
+</div>
+<a href="https://paystack.shop/pay/from-salary-to-wealth-ebook" class="btn btn-primary" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout');">Order Now</a>
+</div>
+
+<!-- Scroll animation script + sticky CTA reveal -->
+<script>
+// Fade-in observer
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Sticky mobile CTA: appears after scrolling past the hero section
+const stickyCta = document.getElementById('stickyCta');
+const heroSection = document.querySelector('.hero');
+if (stickyCta && heroSection) {
+    const stickyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                stickyCta.classList.add('visible');
+                stickyCta.setAttribute('aria-hidden', 'false');
+            } else {
+                stickyCta.classList.remove('visible');
+                stickyCta.setAttribute('aria-hidden', 'true');
+            }
+        });
+    }, { threshold: 0 });
+    stickyObserver.observe(heroSection);
+}
+</script>
+
+</body>
+</html>
