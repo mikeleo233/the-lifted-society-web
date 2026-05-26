@@ -1,6 +1,15 @@
 # The Lifted Society — Complete Site
 
-This folder contains the full website for The Lifted Society publisher, the *From Salary to Wealth* landing page, and the post-purchase thank you page.
+This folder contains the full website for The Lifted Society publisher: the homepage, every book's landing page, and every post-purchase thank you page.
+
+The site currently holds **four books**:
+
+1. *From Salary to Wealth*
+2. *How Great Men Fall*
+3. *The Sin That Ends Destinies*
+4. *The Dream Killer*
+
+Books 2, 3, and 4 are the **same book sold under three test titles**. They run as three separate landing pages so each Facebook ad can be matched to a page that echoes its title. Whichever title wins on cost per purchase becomes the main one; the others can be retired.
 
 ---
 
@@ -14,8 +23,23 @@ the-lifted-society-web/
 │   ├── cover.png                       ← Book cover
 │   └── thank-you/
 │       └── index.html                  ← Thank you page (after Paystack)
+├── how-great-men-fall/
+│   ├── index.html                      ← Landing page
+│   ├── cover.png                       ← Book cover
+│   └── thank-you/
+│       └── index.html                  ← Thank you page (after Paystack)
+├── the-sin-that-ends-destinies/
+│   ├── index.html                      ← Landing page
+│   ├── cover.png                       ← Book cover
+│   └── thank-you/
+│       └── index.html                  ← Thank you page (after Paystack)
+├── the-dream-killer/
+│   ├── index.html                      ← Landing page
+│   ├── cover.png                       ← Book cover
+│   └── thank-you/
+│       └── index.html                  ← Thank you page (after Paystack)
 ├── shared/
-│   ├── styles.css                      ← Shared design system
+│   ├── styles.css                      ← Shared base reset
 │   └── cover-small.png                 ← Small cover for homepage
 └── README.md                           ← This file
 ```
@@ -25,313 +49,250 @@ the-lifted-society-web/
 | Page | URL |
 |---|---|
 | Homepage | https://theliftedsociety.org |
-| Landing page | https://theliftedsociety.org/from-salary-to-wealth |
-| Thank you page | https://theliftedsociety.org/from-salary-to-wealth/thank-you |
+| From Salary to Wealth — landing | https://theliftedsociety.org/from-salary-to-wealth |
+| From Salary to Wealth — thank you | https://theliftedsociety.org/from-salary-to-wealth/thank-you |
+| How Great Men Fall — landing | https://theliftedsociety.org/how-great-men-fall |
+| How Great Men Fall — thank you | https://theliftedsociety.org/how-great-men-fall/thank-you |
+| The Sin That Ends Destinies — landing | https://theliftedsociety.org/the-sin-that-ends-destinies |
+| The Sin That Ends Destinies — thank you | https://theliftedsociety.org/the-sin-that-ends-destinies/thank-you |
+| The Dream Killer — landing | https://theliftedsociety.org/the-dream-killer |
+| The Dream Killer — thank you | https://theliftedsociety.org/the-dream-killer/thank-you |
 
 ---
 
-## BEFORE YOU DEPLOY — 3 placeholders to fill in
+## STATUS — what is done and what is left
 
-Use Find & Replace in any text editor (Notepad, TextEdit, VS Code). The three placeholders are clearly marked.
+### From Salary to Wealth
+- Facebook Pixel `2895366437482752`: set
+- Paystack link: set (`https://paystack.shop/pay/from-salary-to-wealth-ebook`)
+- R2 download links: still to be set (see "Common edits" if not yet done)
 
-### 1. Facebook Pixel ID — ALREADY SET
+### How Great Men Fall / The Sin That Ends Destinies / The Dream Killer
+- Facebook Pixel `2895366437482752`: set on all landing and thank you pages
+- Paystack links: set, each page pointing to its own product:
+  - `https://paystack.shop/pay/how-great-men-fall`
+  - `https://paystack.shop/pay/the-sin-that-ends-destinies`
+  - `https://paystack.shop/pay/the-dream-killer`
+- R2 download links: set on all three thank you pages
+- Price: GHS 45
+- **Outstanding:** Paystack Success Redirect URLs (see "Paystack storefront setup"), homepage links (see "Adding the books to the homepage"), and confirming the 6 book files are uploaded to R2.
 
-Pixel ID `2895366437482752` is already embedded in the landing page and thank you page. No action needed.
+---
 
-(The homepage does not have a Pixel — it does not need to. Only the landing page and thank you page track conversions.)
+## FACEBOOK PIXEL
 
-### 2. Paystack order link — ALREADY SET
+Pixel ID `2895366437482752` is embedded in every landing page and every thank you page. No action needed.
 
-All 5 ORDER NOW buttons (4 in-page + 1 sticky mobile bar) already point to:
-`https://paystack.shop/pay/from-salary-to-wealth-ebook`
-
-No action needed unless you change your Paystack product URL.
-
-### 3. Cloudflare R2 download links — STILL TO BE SET
-
-The thank you page has two download buttons, one for PDF and one for EPUB. Both still need their R2 URLs:
-
-Find: `https://files.theliftedsociety.org/YOUR-PDF-LINK-HERE`
-Replace with: e.g. `https://files.theliftedsociety.org/From_Salary_to_Wealth.pdf`
-
-Find: `https://files.theliftedsociety.org/YOUR-EPUB-LINK-HERE`
-Replace with: e.g. `https://files.theliftedsociety.org/From_Salary_to_Wealth.epub`
-
-Both are in: `from-salary-to-wealth/thank-you/index.html`
-
-(See "CLOUDFLARE R2 SETUP" section below for how to set up the file hosting.)
+The homepage does not carry a Pixel and does not need one. Only landing pages and thank you pages track conversions:
+- Landing pages fire `PageView` on load and `InitiateCheckout` when an order button is clicked.
+- Thank you pages fire `PageView` and `Purchase` on load.
 
 ---
 
 ## PAYSTACK STOREFRONT SETUP
 
-To make the thank you page actually trigger after payment, configure Paystack to redirect there:
+For each book, Paystack must redirect to that book's thank you page after a successful payment. This is what triggers the thank you page and fires the Pixel `Purchase` event.
 
-1. Log into Paystack Dashboard
-2. Go to Products → your *From Salary to Wealth* product
+For each of the four products:
+
+1. Log into the Paystack Dashboard
+2. Go to Products → the product
 3. Edit the product
-4. Find the Success Redirect URL (or similar) field
-5. Set it to: `https://theliftedsociety.org/from-salary-to-wealth/thank-you`
+4. Find the Success Redirect URL field
+5. Set it to that book's thank you page:
+
+| Product | Success Redirect URL |
+|---|---|
+| From Salary to Wealth | https://theliftedsociety.org/from-salary-to-wealth/thank-you |
+| How Great Men Fall | https://theliftedsociety.org/how-great-men-fall/thank-you |
+| The Sin That Ends Destinies | https://theliftedsociety.org/the-sin-that-ends-destinies/thank-you |
+| The Dream Killer | https://theliftedsociety.org/the-dream-killer/thank-you |
+
 6. Save changes
 
-Now after every successful payment, the buyer will be taken to your thank you page, where they can download the book and where the Facebook Pixel will fire a Purchase event.
+If a buyer pays but lands on Paystack's default page instead of your thank you page, this URL is missing or wrong.
 
 ---
 
-## CLOUDFLARE R2 SETUP (file hosting for the book)
+## CLOUDFLARE R2 SETUP (file hosting for the books)
 
-The book PDF is hosted on Cloudflare R2 (free for your traffic level). Setup takes about 20 minutes total.
+All book files are hosted on Cloudflare R2 and served from `files.theliftedsociety.org`.
 
-### Part 1: Create the R2 bucket (5 minutes)
+### The files
 
-1. Cloudflare Dashboard → R2 (in left sidebar under Storage)
-2. Click "Create bucket"
-3. Name: `the-lifted-society-books`
-4. Location hint: Eastern Europe or Asia (these route fastest to Ghana)
-5. Click "Create bucket"
+There are **eight** files in the bucket: a PDF and an EPUB for each of the four books.
 
-### Part 2: Upload both files (3 minutes)
+| Book | PDF | EPUB |
+|---|---|---|
+| From Salary to Wealth | From_Salary_to_Wealth.pdf | From_Salary_to_Wealth.epub |
+| How Great Men Fall | How Great Men Fall - The Lifted Society.pdf | How Great Men Fall - The Lifted Society.epub |
+| The Sin That Ends Destinies | The Sin That Ends Destinies - The Lifted Society.pdf | The Sin That Ends Destinies - The Lifted Society.epub |
+| The Dream Killer | The Dream Killer - The Lifted Society.pdf | The Dream Killer - The Lifted Society.epub |
 
-1. Open your newly created bucket
-2. Click "Upload"
-3. Drag and drop BOTH files:
-   - `From_Salary_to_Wealth.pdf` (the PDF version with cover)
-   - `From_Salary_to_Wealth.epub` (the EPUB version for phones and e-readers)
-4. Done — both files are now stored
+Filenames are case-sensitive and spaces matter. The thank you pages link to these exact names (spaces encoded as `%20`). If a download 404s, a filename mismatch is the first thing to check.
 
-### Part 3: Make the files publicly accessible via a custom domain (10 minutes)
+### Bucket setup (one-time)
 
-The cleanest setup uses a subdomain like `files.theliftedsociety.org`:
+1. Cloudflare Dashboard → R2
+2. Open the `the-lifted-society-books` bucket (or create it)
+3. Click Upload, drag in all eight files
+4. Bucket → Settings → Custom Domains → connect `files.theliftedsociety.org`
+5. Wait 1-5 minutes for the SSL certificate
 
-1. In your bucket → Settings → Custom Domains → Connect Domain
-2. Enter `files.theliftedsociety.org`
-3. Cloudflare auto-configures DNS (since your domain is in Cloudflare)
-4. Wait 1-5 minutes for the SSL certificate to provision
-5. Your files are now accessible at:
-   - `https://files.theliftedsociety.org/From_Salary_to_Wealth.pdf`
-   - `https://files.theliftedsociety.org/From_Salary_to_Wealth.epub`
+### Why R2
 
-### Part 4: Update the two URLs in the thank-you page (2 minutes)
+- Direct download, no "sign in to Google" interruption
+- Branded URL on your own domain
+- Fast downloads via Cloudflare's edge
+- Zero egress fees regardless of how many people download
+- Replace a file in place (same name) to push a book update without changing the site
 
-1. Open `from-salary-to-wealth/thank-you/index.html` on GitHub
-2. Click the pencil icon to edit
-3. Find: `https://files.theliftedsociety.org/YOUR-PDF-LINK-HERE`
-4. Replace with: `https://files.theliftedsociety.org/From_Salary_to_Wealth.pdf`
-5. Find: `https://files.theliftedsociety.org/YOUR-EPUB-LINK-HERE`
-6. Replace with: `https://files.theliftedsociety.org/From_Salary_to_Wealth.epub`
-7. Commit changes — Cloudflare Pages auto-redeploys in 30 seconds
+### Updating a book later
 
-### Why R2 instead of Google Drive
-
-- Direct PDF download (no "sign in to Google" interruption)
-- Branded URL on your own domain (more trust)
-- Fast downloads via Cloudflare's Accra edge node
-- Zero egress fees — you'll never pay for bandwidth even if 10,000 people download
-- You can replace the file in place without breaking existing links (update the book later → same URL still works)
-
-### Updating the book later
-
-If you ever release v2 of the book:
-
-1. Go to your R2 bucket
-2. Upload the new PDF with the SAME filename
-3. It overwrites in place
-4. All existing buyers who bookmarked the link will download the new version next time
-5. No changes needed to the website
+Upload the new file to R2 with the **same filename**. It overwrites in place and every existing link keeps working. No website change needed.
 
 ---
 
 ## DEPLOYMENT TO CLOUDFLARE PAGES
 
-### Step 1: Upload files to GitHub (10 minutes)
+If the site is already live (the wealth book is deployed), you are only **adding three folders**, see "Adding a new book set" below. The full first-time deployment steps are kept here for reference.
 
-1. Go to github.com and sign in
-2. Click + top right → New repository
-3. Name it `the-lifted-society-web`
-4. Set to Public
-5. Click Create repository
-6. On the next screen, click "uploading an existing file"
-7. Drag the CONTENTS of this folder (not the folder itself) into the upload area:
-   - You should see `index.html`, the `from-salary-to-wealth` folder, and the `shared` folder at the top
-8. Click Commit changes
+### First-time deployment
 
-### Step 2: Sign up for Cloudflare (3 minutes)
+1. **GitHub:** create the `the-lifted-society-web` repository, upload the contents of this folder (`index.html`, the book folders, `shared/`), commit.
+2. **Cloudflare account:** sign up at cloudflare.com, verify email.
+3. **Add the domain:** Cloudflare dashboard → Add a Site → `theliftedsociety.org` → Free plan → let it scan DNS → copy the two nameservers.
+4. **Namecheap nameservers:** Namecheap → Domain List → Manage `theliftedsociety.org` → Nameservers → Custom DNS → paste Cloudflare's two nameservers → save.
+5. **Cloudflare Pages project:** Workers & Pages → Create application → Pages → Connect to Git → select the repo → Begin setup → project name `the-lifted-society-web`, production branch `main`, leave all build settings blank → Save and Deploy.
+6. **Custom domain:** in the Pages project → Custom domains → add `theliftedsociety.org` and `www.theliftedsociety.org`, wait for SSL.
 
-1. Go to cloudflare.com → Sign Up → create free account
-2. Verify your email
+### Adding a new book set (when the site is already live)
 
-### Step 3: Add theliftedsociety.org to Cloudflare (5 minutes)
+The three new books are added without disturbing the wealth book:
 
-1. Cloudflare dashboard → Add a Site
-2. Enter `theliftedsociety.org` → Continue
-3. Choose the Free plan → Continue
-4. Let Cloudflare scan your existing DNS records
-5. Cloudflare gives you 2 nameservers like:
-   - `xxx.ns.cloudflare.com`
-   - `yyy.ns.cloudflare.com`
-6. Copy these two nameservers
+1. Go to the `the-lifted-society-web` repo on github.com
+2. Add file → Upload files
+3. Drag in the three folders: `how-great-men-fall`, `the-sin-that-ends-destinies`, `the-dream-killer`. (Do not re-upload `shared/` — leave the existing one as is.)
+4. Commit changes
+5. Cloudflare Pages auto-redeploys in 30-60 seconds
+6. Set the three Paystack Success Redirect URLs (see "Paystack storefront setup")
+7. Leave the homepage as is for now. The three titles are an ad-only test; once a winner emerges, add only that one to the homepage (see "Adding the books to the homepage")
 
-### Step 4: Update Namecheap nameservers (5 minutes)
+---
 
-1. namecheap.com → sign in → Domain List → Manage `theliftedsociety.org`
-2. Nameservers section → change dropdown to Custom DNS
-3. Paste Cloudflare's two nameservers
-4. Click the green checkmark to save
+## ADDING THE BOOKS TO THE HOMEPAGE
 
-DNS propagation usually takes 15 minutes to a few hours. Continue to Step 5 while you wait.
+`index.html` is the homepage.
 
-### Step 5: Create Cloudflare Pages project (5 minutes)
+**The three test titles are deliberately NOT on the homepage.** *How Great Men Fall*, *The Sin That Ends Destinies*, and *The Dream Killer* are the same book being tested under three titles. Putting all three on the homepage would confuse visitors and split attention. They run as ad-only landing pages, reachable by direct link, which is all the Facebook ads need.
 
-1. Cloudflare dashboard → Workers & Pages
-2. Create application → Pages tab → Connect to Git
-3. Click Connect GitHub and authorize
-4. Select your `the-lifted-society-web` repository
-5. Click Begin setup
-6. Configure:
-   - Project name: `the-lifted-society-web`
-   - Production branch: `main`
-   - Build settings: LEAVE EVERYTHING BLANK (static site, no build needed)
-7. Click Save and Deploy
+Once the title test has a clear winner (lowest cost per purchase), add **only that one winning title** to the homepage as the next book, alongside *From Salary to Wealth*. The two losing pages can then be retired.
 
-In about 60 seconds your site is live at: `the-lifted-society-web.pages.dev`
-
-Open that URL on your phone and computer. Click through every page. Verify everything works before you connect the custom domain.
-
-### Step 6: Connect your custom domain (5 minutes)
-
-1. In your Cloudflare Pages project → Custom domains → Set up a custom domain
-2. Enter `theliftedsociety.org` → Continue → Activate domain
-3. Wait 1-5 minutes for SSL certificate to provision
-
-Optional but recommended: also add `www.theliftedsociety.org`
-1. Set up a custom domain again → enter `www.theliftedsociety.org` → activate
-
-Your site is now live at all three URLs listed at the top of this README.
+To add the winning book to the homepage, duplicate the existing book card/link block in `index.html` and update three things: the link (e.g. `/the-dream-killer/`), the cover image, and the title. The winning book also needs a small cover image in `shared/` for the homepage, matching how the wealth book uses `shared/cover-small.png`.
 
 ---
 
 ## TESTING BEFORE YOU RUN ADS
 
-Three critical tests before spending any money on ads.
+Run these for **each** book before spending on ads for it.
 
 ### Test 1: Pixel is firing
-
 1. Install the Facebook Pixel Helper Chrome extension
-2. Visit `theliftedsociety.org/from-salary-to-wealth`
-3. Pixel Helper should show: 1 pixel found, PageView event fired
-4. Click any ORDER NOW button → Pixel Helper should fire InitiateCheckout
-5. Visit `theliftedsociety.org/from-salary-to-wealth/thank-you` directly
-6. Pixel Helper should fire both PageView and Purchase
-
-If any of these fail, you forgot to replace `YOUR_PIXEL_ID` in one or both files.
+2. Visit the book's landing page → should show 1 pixel, `PageView` fired
+3. Click an order button → should fire `InitiateCheckout`
+4. Visit the book's thank you page directly → should fire `PageView` and `Purchase`
 
 ### Test 2: The full purchase flow works end-to-end
-
-1. Click ORDER NOW on the landing page → you should arrive at Paystack
-2. Complete a small test purchase
-3. You should be redirected to `theliftedsociety.org/from-salary-to-wealth/thank-you`
-4. Click "Download the Book" → the book PDF should download
-
-If the redirect doesn't happen, the Paystack Success Redirect URL is wrong. If the download fails, the R2 file URL is wrong or the bucket's custom domain hasn't fully provisioned yet.
+1. Click an order button → you should arrive at the correct Paystack product
+2. Complete a small test purchase (refundable from the Paystack dashboard)
+3. You should be redirected to that book's thank you page
+4. Click both download buttons → the correct PDF and EPUB should download
 
 ### Test 3: The site looks right on phones
-
-Most of your buyers will be on phones. Open all three pages on your phone:
-- `theliftedsociety.org`
-- `theliftedsociety.org/from-salary-to-wealth`
-- `theliftedsociety.org/from-salary-to-wealth/thank-you`
-
-Check:
+Most buyers are on phones. Open the landing page and thank you page on a phone and check:
 - Cover image loads quickly
 - Headlines are readable, no awkward line breaks
-- Buttons are tappable and centered
-- Sticky mobile order bar appears on the landing page after scrolling past hero
+- Buttons are tappable, centered, and the shine animation runs
+- Sticky mobile order bar appears after scrolling past the hero
 - Checkmark animation plays on the thank you page
 
 ---
 
 ## EDITING THE SITE AFTER LAUNCH
 
-All edits happen on github.com via your browser. No terminal, no code editor needed.
+All edits happen on github.com in the browser. No terminal needed.
 
-1. Go to your `the-lifted-society-web` repo on github.com
-2. Click the file you want to edit
-3. Click the pencil icon (top right of file view)
-4. Make changes in the browser
-5. Scroll to bottom → Commit changes
+1. Open the repo on github.com
+2. Click the file to edit
+3. Click the pencil icon
+4. Make changes
+5. Commit changes at the bottom
 6. Cloudflare auto-deploys in 30-60 seconds
 
 ### Common edits
 
-Change the price: Find `GHS 45` in `from-salary-to-wealth/index.html`, replace with new price.
+**Change a book's price:** find `GHS 45` (or `GHS&nbsp;45`) in that book's `index.html` and replace it. It appears in several places per page.
 
-Change the Paystack link: Find your current Paystack URL across the file, find & replace with new URL.
+**Change a Paystack link:** find the Paystack URL in that book's `index.html` and replace every instance.
 
-Update the R2 download link: Edit `from-salary-to-wealth/thank-you/index.html`, find `files.theliftedsociety.org` line, update URL.
+**Update an R2 download link:** edit that book's `thank-you/index.html`, update the `files.theliftedsociety.org` URLs.
 
-Add a new book: Duplicate the entire `from-salary-to-wealth/` folder, rename it, swap content, update the homepage to feature it.
+**Add another book:** duplicate a book folder, rename it, swap the content, cover, links and price, then link it from the homepage.
 
 ---
 
 ## WHAT'S BUILT IN
 
 ### Landing page conversion features
-- 4 ORDER NOW buttons at strategic decision moments
-- Sticky mobile order bar that appears after scrolling past hero
-- Trust badges in hero (Pay with MoMo · Instant download · Read anywhere)
-- "Grounded in Reality" credibility callout
+- Multiple order buttons at strategic decision moments, plus a sticky mobile order bar that appears after the hero
+- Rounded, glowing primary buttons with a periodic shine sweep and a subtle pulse
+- "Who this book is for" section covering each reader the book speaks to
+- "Read this one together" section for couples and married readers
+- Honest cost breakdown and a clear "what's inside" section
 - "What happens after you order" 3-step reinforcement
-- Line-art SVG icons for the chapter pillars
-- Subtle pulse animation on primary buttons
-- Hero shows cover image first on mobile (above headline)
-- No escape links (no nav menu, no social links) — single-path conversion
+- Cover image leads the hero on mobile
+- Single-path conversion: no nav menu, minimal footer
 
 ### Thank you page features
-- Animated checkmark on page load (emotional confirmation)
-- Prominent download button
-- Facebook Pixel Purchase event fires automatically on page load
-- Hidden from search engines (noindex meta tag)
-- "Save this page" reminder for repeat downloads
-- Support email for download issues
-- Soft pitch to follow socials for future books
+- Animated checkmark on load
+- Prominent PDF and EPUB download buttons with file guidance
+- Facebook Pixel `Purchase` event fires on load
+- Hidden from search engines (`noindex, nofollow`)
+- Reading guidance and a support email for download issues
 
 ### Design
-- Cohesive brand across all pages (deep forest green, warm gold, cream)
-- Cormorant Garamond serif headlines + Inter body
-- Fully responsive (mobile-first)
-- Editorial/publisher feel
+- Each book carries its own colour world and layout, chosen for its subject (no shared house "look" beyond a base reset). The three sexual-integrity books use a deep navy / dawn-light / terracotta palette.
+- *From Salary to Wealth* uses its own deep green / gold / cream world.
+- Fully responsive, mobile-first, editorial publisher feel.
 
 ### SEO
 - Proper meta titles and descriptions
-- Open Graph tags for Facebook/WhatsApp sharing
 - Clean semantic HTML
-- Thank you page hidden from search engines
+- Thank you pages hidden from search engines
 
 ---
 
 ## TROUBLESHOOTING
 
-The site isn't loading at theliftedsociety.org
-- DNS propagation can take up to 24 hours. Test again in 1-2 hours.
-- Check Cloudflare → DNS to confirm nameservers are active.
+**The site isn't loading at theliftedsociety.org**
+DNS propagation can take up to 24 hours. Check Cloudflare → DNS that nameservers are active.
 
-Order Now button doesn't go anywhere
-- You forgot to replace `https://paystack.shop/YOUR-LINK-HERE`.
+**An order button doesn't go anywhere**
+The Paystack link in that book's `index.html` is missing or wrong.
 
-Pixel isn't firing
-- You forgot to replace `YOUR_PIXEL_ID` in one or more files.
+**Pixel isn't firing**
+Re-check the Pixel block in the affected page's `<head>`.
 
-Buyer paid but landed on Paystack's default page, not my thank you page
-- Paystack Success Redirect URL is not set. Configure it in Paystack Dashboard → your product → Settings.
+**Buyer paid but landed on Paystack's default page, not the thank you page**
+That product's Success Redirect URL is not set in the Paystack dashboard.
 
-Download button gives an error or shows a blank page
-- Your R2 bucket's custom domain may not be fully provisioned yet (wait 5-10 minutes after setup).
-- The file URL in the thank-you page doesn't match the actual file name in R2 (filenames are case-sensitive).
-- The bucket isn't connected to a custom domain. Re-check: R2 bucket → Settings → Custom Domains.
+**Download button gives an error or a blank page**
+- The R2 bucket's custom domain may not be fully provisioned yet (wait 5-10 minutes).
+- The file URL in the thank you page does not match the actual filename in R2 (case-sensitive, spaces matter).
+- The bucket is not connected to its custom domain.
 
-Changes I made aren't showing up
-- Wait 60 seconds for Cloudflare auto-deploy.
-- Hard refresh (Ctrl+Shift+R / Cmd+Shift+R).
+**Changes aren't showing up**
+Wait 60 seconds for Cloudflare auto-deploy, then hard refresh (Ctrl+Shift+R / Cmd+Shift+R).
 
 ---
 
