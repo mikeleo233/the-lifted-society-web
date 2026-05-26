@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Dream Killer | The Lifted Society</title>
+<meta name="description" content="How Fornication and Adultery Bury Big Dreams, and How to Break Free">
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2895366437482752');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2895366437482752&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared/styles.css">
+<style>
+:root{
+  --navy:#0F1B2D; --navy-soft:#16263c; --dawn:#EDE3D0;
+  --ember:#C26B4A; --ember-bright:#d8794f;
+  --ink:#1c2331; --paper:#f6f1e7; --muted:#6b7280;
+}
+html,body{background:var(--paper);color:var(--ink);}
+body{font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.serif{font-family:"Fraunces",Georgia,serif;}
+
+/* ---- top bar: brand name only, no nav (kit 5a) ---- */
+.topbar{background:var(--navy);color:var(--dawn);
+  text-align:center;padding:14px 20px;
+  font-family:"Fraunces",serif;font-size:14px;
+  letter-spacing:.22em;text-transform:uppercase;}
+
+/* ---- HERO: the cover is the hero, full-bleed dark ---- */
+.hero{background:var(--navy);color:var(--dawn);
+  padding:48px 24px 72px;text-align:center;position:relative;
+  overflow:hidden;}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;
+  height:180px;background:linear-gradient(to top,
+  rgba(194,107,74,.18),transparent);pointer-events:none;}
+.hero-cover{width:min(330px,74vw);margin:0 auto 34px;
+  box-shadow:0 30px 70px -20px rgba(0,0,0,.8),
+  0 0 0 1px rgba(237,227,208,.08);}
+.hero-hook{font-family:"Fraunces",serif;font-size:clamp(23px,5.4vw,33px);
+  line-height:1.28;font-weight:500;max-width:16ch;margin:0 auto 14px;}
+.hero-sub{color:#9fb0c4;font-size:15px;font-style:italic;
+  max-width:34ch;margin:0 auto 34px;}
+.hero-author{font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  color:#7d8 da3;}
+
+/* ---- buttons: rounded, conspicuous, with a periodic shine sweep ---- */
+.btn{position:relative;display:inline-block;
+  background:var(--ember);color:#fff;
+  font-weight:700;font-size:17px;letter-spacing:.02em;
+  padding:19px 44px;text-decoration:none;border:0;cursor:pointer;
+  border-radius:999px;overflow:hidden;
+  box-shadow:0 10px 26px -6px rgba(194,107,74,.6),
+    0 0 0 0 rgba(216,121,79,.5);
+  transition:background .15s ease,transform .15s ease,
+    box-shadow .15s ease;
+  animation:btnpulse 3.4s ease-in-out infinite;}
+.btn:hover{background:var(--ember-bright);transform:translateY(-2px);
+  box-shadow:0 14px 32px -6px rgba(194,107,74,.75);}
+.btn>*{position:relative;z-index:2;}
+/* the shine: a tilted light band that sweeps across on a loop */
+.btn::after{content:"";position:absolute;top:-60%;left:-75%;
+  width:45%;height:220%;z-index:1;pointer-events:none;
+  background:linear-gradient(115deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.15) 38%,
+    rgba(255,255,255,.85) 50%,
+    rgba(255,255,255,.15) 62%,
+    rgba(255,255,255,0) 100%);
+  transform:skewX(-22deg);
+  animation:btnshine 4.8s ease-in-out infinite;}
+@keyframes btnshine{
+  0%   {left:-75%;}
+  18%  {left:135%;}
+  100% {left:135%;}        /* rests off-screen between sweeps */
+}
+@keyframes btnpulse{
+  0%,100%{box-shadow:0 10px 26px -6px rgba(194,107,74,.6),
+    0 0 0 0 rgba(216,121,79,.55);}
+  50%    {box-shadow:0 10px 26px -6px rgba(194,107,74,.6),
+    0 0 0 9px rgba(216,121,79,0);}
+}
+@media(prefers-reduced-motion:reduce){
+  .btn,.btn::after{animation:none;}
+}
+.btn-price{display:block;font-size:12px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;opacity:.9;
+  margin-top:5px;}
+
+/* ---- narrow reading column for the intimate sections ---- */
+.read{max-width:620px;margin:0 auto;padding:64px 24px;}
+.read p{margin-bottom:20px;}
+.read p:last-child{margin-bottom:0;}
+.lead-in{font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ember);margin-bottom:18px;}
+.read h2{font-family:"Fraunces",serif;font-size:clamp(26px,5.5vw,36px);
+  line-height:1.22;font-weight:600;margin-bottom:22px;}
+.pull{font-family:"Fraunces",serif;font-size:22px;line-height:1.4;
+  font-style:italic;color:var(--navy);
+  border-left:3px solid var(--ember);padding-left:22px;margin:34px 0;}
+
+/* ---- full-width dark band: the cost list ---- */
+.band{background:var(--navy);color:var(--dawn);padding:66px 24px;}
+.band-inner{max-width:640px;margin:0 auto;}
+.band h2{font-family:"Fraunces",serif;font-size:clamp(26px,5.5vw,36px);
+  font-weight:600;line-height:1.22;margin-bottom:8px;}
+.band-kicker{font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ember-bright);margin-bottom:18px;}
+.cost{border-top:1px solid rgba(237,227,208,.16);
+  padding:20px 0;display:flex;gap:18px;align-items:baseline;}
+.cost:last-child{border-bottom:1px solid rgba(237,227,208,.16);}
+.cost-n{font-family:"Fraunces",serif;font-size:20px;color:var(--ember-bright);
+  flex:none;width:1.6em;}
+.cost-t{font-weight:700;}
+.cost-t span{display:block;font-weight:400;color:#9fb0c4;
+  font-size:15.5px;margin-top:3px;}
+
+/* ---- "what's inside" - offset asymmetric block ---- */
+.inside{max-width:760px;margin:0 auto;padding:64px 24px;}
+.inside h2{font-family:"Fraunces",serif;font-size:clamp(26px,5.5vw,36px);
+  font-weight:600;margin-bottom:30px;}
+.inside ul{list-style:none;margin:0;padding:0;}
+.inside li{list-style:none;border-left:2px solid var(--ember);
+  padding:6px 0 6px 22px;margin-bottom:22px;
+  margin-left:0;}
+.inside li:nth-child(even){margin-left:clamp(0px,7vw,64px);}
+.inside li b{display:block;font-family:"Fraunces",serif;
+  font-size:19px;margin-bottom:3px;color:var(--navy);}
+.inside li span{color:#444;font-size:16.5px;}
+
+/* ---- who this is for ---- */
+.forwho{max-width:760px;margin:0 auto;padding:24px 24px 64px;}
+.forwho h2{font-family:"Fraunces",serif;font-size:clamp(26px,5.5vw,36px);
+  font-weight:600;margin-bottom:10px;}
+.forwho-lead{color:#444;margin-bottom:34px;}
+.forwho-grid{display:flex;flex-direction:column;gap:0;}
+.who{display:flex;gap:18px;padding:24px 0;
+  border-top:1px solid rgba(15,27,45,.14);}
+.who:last-child{border-bottom:1px solid rgba(15,27,45,.14);}
+.who-mark{font-family:"Fraunces",serif;font-style:italic;
+  font-size:30px;color:var(--ember);flex:none;width:1.3em;
+  line-height:1;}
+.who-body b{font-family:"Fraunces",serif;font-size:19px;
+  color:var(--navy);display:block;margin-bottom:5px;}
+.who-body span{color:#444;font-size:16.5px;}
+
+/* ---- read it together (gift band) ---- */
+.together{background:var(--ember);color:#fff;padding:64px 24px;}
+.together-inner{max-width:620px;margin:0 auto;}
+.together-kicker{font-size:13px;letter-spacing:.2em;
+  text-transform:uppercase;color:#ffe6d8;margin-bottom:16px;}
+.together h2{font-family:"Fraunces",serif;
+  font-size:clamp(26px,5.5vw,36px);font-weight:600;
+  line-height:1.22;margin-bottom:20px;}
+.together p{margin-bottom:18px;color:#fdeee6;}
+.together p:last-of-type{margin-bottom:0;}
+.together .why{margin:24px 0 0;}
+.together .why li{display:flex;gap:12px;padding:10px 0;
+  font-size:16px;border-top:1px solid rgba(255,255,255,.22);}
+.together .why li:last-child{border-bottom:1px solid rgba(255,255,255,.22);}
+.together .why li::before{content:"\2022";color:#fff;font-weight:700;
+  flex:none;font-size:20px;line-height:1.2;}
+
+/* ---- buy band ---- */
+.buy{background:var(--navy-soft);color:var(--dawn);
+  padding:70px 24px;text-align:center;}
+.buy h2{font-family:"Fraunces",serif;font-size:clamp(27px,6vw,38px);
+  font-weight:600;line-height:1.2;max-width:18ch;margin:0 auto 16px;}
+.buy p{color:#9fb0c4;max-width:40ch;margin:0 auto 32px;font-size:16px;}
+.assure{max-width:430px;margin:34px auto 0;text-align:left;
+  list-style:none;padding:0;}
+.assure li{list-style:none;display:flex;gap:12px;padding:9px 0;
+  font-size:15px;color:#c7d2e0;}
+.assure li::before{content:"\2713";color:var(--ember-bright);
+  font-weight:700;flex:none;}
+.steps{max-width:430px;margin:30px auto 0;text-align:left;
+  font-size:15px;color:#9fb0c4;list-style:none;
+  counter-reset:s;padding:0;}
+.steps li{list-style:none;padding:7px 0 7px 34px;position:relative;
+  counter-increment:s;}
+.steps li::before{content:counter(s);position:absolute;left:0;top:6px;
+  width:22px;height:22px;background:var(--ember);color:#fff;
+  font-size:12px;font-weight:700;display:flex;align-items:center;
+  justify-content:center;}
+
+/* ---- closing line ---- */
+.closing{background:var(--paper);text-align:center;
+  padding:60px 24px;}
+.closing p{font-family:"Fraunces",serif;font-style:italic;
+  font-size:clamp(20px,4.6vw,26px);line-height:1.4;
+  color:var(--navy);max-width:22ch;margin:0 auto;}
+
+/* ---- footer: minimal (kit 5a) ---- */
+.foot{background:var(--navy);color:#7d8da3;text-align:center;
+  padding:40px 24px;font-size:13px;}
+.foot .fbrand{font-family:"Fraunces",serif;color:var(--dawn);
+  letter-spacing:.2em;text-transform:uppercase;font-size:14px;
+  margin-bottom:8px;}
+.foot a{color:var(--ember-bright);text-decoration:none;}
+
+/* ---- sticky mobile order bar (revealed after hero) ---- */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--navy);border-top:1px solid rgba(237,227,208,.14);
+  padding:11px 16px;display:flex;align-items:center;gap:14px;
+  box-shadow:0 -8px 30px rgba(0,0,0,.4);
+  transform:translateY(110%);transition:transform .25s ease;}
+.sticky.show{transform:translateY(0);}
+.sticky-info{color:var(--dawn);font-size:13px;line-height:1.3;flex:1;}
+.sticky-info b{font-family:"Fraunces",serif;font-size:15px;}
+.sticky .btn{padding:14px 22px;font-size:14px;flex:none;}
+.sticky .btn .btn-price{display:none;}
+@media(min-width:880px){.sticky{display:none;}}
+body{padding-bottom:0;}
+</style>
+</head>
+<body>
+
+<div class="topbar">The Lifted Society</div>
+
+<header class="hero">
+  <img class="hero-cover" src="cover.png" alt="The Dream Killer book cover">
+  <h1 class="hero-hook">Something is quietly killing the future you are working so hard to build.</h1>
+  <p class="hero-sub">How Fornication and Adultery Bury Big Dreams, and How to Break Free</p>
+  <p class="hero-author">By Daniel Osei-Bonsu</p>
+  <div style="margin-top:30px"><a class="btn" href="https://paystack.shop/pay/the-dream-killer" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout');"><span class="btn-label">Get the Book</span><span class="btn-price">Instant download &middot; GHS&nbsp;45</span></a></div>
+</header>
+
+<section class="read">
+  <div class="lead-in">Read this first</div>
+  <h2>Nobody plans the fall.</h2>
+  <p>No one wakes up one morning and decides to lose their marriage,
+  their money, their good name, and the future they spent years
+  building. It never happens that way.</p>
+  <p>It happens quietly. One reply. One conversation. One night that
+  felt small. Each choice too ordinary to worry about, until
+  one day a gifted, hardworking, God-fearing person looks up and the
+  life they were building is gone.</p>
+  <p class="pull">A man is not finished when he falls. He is finished
+  when he refuses to rise.</p>
+  <p>This book is an honest look at how fornication and adultery
+  quietly destroy big dreams, and a clear, practical path back for
+  anyone willing to walk it.</p>
+</section>
+
+<section class="band">
+  <div class="band-inner">
+    <div class="band-kicker">The bill nobody shows you</div>
+    <h2>What this sin actually costs.</h2>
+    <p style="color:#9fb0c4;margin:14px 0 26px">
+      It is sold as something private and free. It is neither.
+      Here is the real, itemised bill.</p>
+    <div class="cost"><div class="cost-n">1</div>
+      <div class="cost-t">Your money
+      <span>It drains the savings, the capital, the plan,
+      because your future is the only account big enough to fund it.</span>
+      </div></div>
+    <div class="cost"><div class="cost-n">2</div>
+      <div class="cost-t">Your focus
+      <span>A divided mind cannot build. The ideas stop coming and
+      the opportunities pass by unnoticed.</span></div></div>
+    <div class="cost"><div class="cost-n">3</div>
+      <div class="cost-t">Your time
+      <span>The years spent inside it do not come back. They are
+      simply gone from a life that was always shorter than it felt.</span>
+      </div></div>
+    <div class="cost"><div class="cost-n">4</div>
+      <div class="cost-t">Your good name
+      <span>Trust built over years can drain away in a week, and the
+      doors a good name once opened stay shut.</span></div></div>
+    <div class="cost"><div class="cost-n">5</div>
+      <div class="cost-t">Your peace
+      <span>A secret has to be guarded every hour. A churning mind
+      cannot rest, cannot plan, cannot dream.</span></div></div>
+    <div class="cost"><div class="cost-n">6</div>
+      <div class="cost-t">Your walk with God
+      <span>The clean conscience, the bold prayer, the undivided
+      worship, all of it quietly fades.</span></div></div>
+  </div>
+</section>
+
+<section class="inside">
+  <h2>What you will find inside</h2>
+  <ul>
+    <li><b>The full, honest cost</b><span>The bill no one shows you
+      before you buy, seen clearly, so the trade loses its
+      power over you.</span></li>
+    <li><b>The exact pattern of a fall</b><span>How strong, capable
+      people are brought low, step by step, so you can recognise it
+      in your own life.</span></li>
+    <li><b>The lies that keep people trapped</b><span>The quiet
+      justifications, and the plain truth that breaks each
+      one.</span></li>
+    <li><b>A clear path of repentance and rebuilding</b><span>Honest
+      guardrails and a way back, written without shame.</span></li>
+    <li><b>A 30-day Walk Free plan</b><span>A simple day-by-day
+      start, small enough that anyone can actually begin.</span></li>
+  </ul>
+</section>
+
+<section class="forwho">
+  <h2>Who this book is for</h2>
+  <p class="forwho-lead">It was written with real people in mind.
+  One of them may be you.</p>
+  <div class="forwho-grid">
+    <div class="who">
+      <div class="who-mark">1</div>
+      <div class="who-body">
+        <b>The person quietly carrying a secret</b>
+        <span>If there is a relationship, a habit, or a private
+        struggle you do not talk about, this book meets you without
+        shame and shows you a real way back.</span>
+      </div>
+    </div>
+    <div class="who">
+      <div class="who-mark">2</div>
+      <div class="who-body">
+        <b>The ambitious young man or woman</b>
+        <span>If you are building a career, a business, or a calling,
+        this book is the fence built before the cliff, so the future
+        you are working for is not quietly lost.</span>
+      </div>
+    </div>
+    <div class="who">
+      <div class="who-mark">3</div>
+      <div class="who-body">
+        <b>The married couple protecting their home</b>
+        <span>If you are building a marriage and a family, this book
+        helps you guard it on purpose, long before trouble ever has a
+        chance to begin.</span>
+      </div>
+    </div>
+    <div class="who">
+      <div class="who-mark">4</div>
+      <div class="who-body">
+        <b>Anyone who loves someone at risk</b>
+        <span>If you see a husband, a wife, a friend, or a child
+        heading toward a dangerous road, this book is an honest,
+        gentle hand, not a weapon.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="together">
+  <div class="together-inner">
+    <div class="together-kicker">If you are married or in a relationship</div>
+    <h2>Read this one together.</h2>
+    <p>This is not a book to hand your partner as an accusation. It is
+    a book to sit down and read side by side, the way two people
+    check the foundation of a house they are building together.</p>
+    <p>Many couples never talk openly about this subject until
+    something has already gone wrong. Reading it together gives you
+    the words, the honesty, and the shared understanding before that
+    day ever comes.</p>
+    <ul class="why">
+      <li>It turns a silent, awkward subject into an open and honest
+      conversation between the two of you.</li>
+      <li>It puts you both on the same side, guarding the same
+      marriage, instead of facing the issue alone.</li>
+      <li>It is a gift of love, a way of saying: I am serious about
+      protecting what we are building.</li>
+      <li>It protects the home, the children, and the future the two
+      of you are working for.</li>
+    </ul>
+    <p style="margin-top:22px">Order one copy for yourself and one for
+    the person you love, and read them together.</p>
+  </div>
+</section>
+
+<section class="buy" id="buy">
+  <h2>Your destiny is still ahead of you.</h2>
+  <p>Whether you have already fallen or simply want to protect what
+  God has placed in front of you, this book is an honest friend for
+  the journey.</p>
+  <a class="btn" href="https://paystack.shop/pay/the-dream-killer" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout');"><span class="btn-label">Get the Book</span><span class="btn-price">Instant download &middot; GHS&nbsp;45</span></a>
+
+  <ul class="assure">
+    <li>Secure payment through Paystack, by card or mobile money.</li>
+    <li>Instant download the moment your payment is confirmed.</li>
+    <li>Yours to keep, in PDF and EPUB, readable on any device.</li>
+    <li>Trouble downloading? Email info@theliftedsociety.org and we
+      will help.</li>
+  </ul>
+
+  <ol class="steps">
+    <li>Tap the button above and complete payment on Paystack.</li>
+    <li>You are taken straight to your download page.</li>
+    <li>Download the book and start reading today.</li>
+  </ol>
+</section>
+
+<section class="closing">
+  <p>The fall is built one small choice at a time. So is the way back.</p>
+</section>
+
+<footer class="foot">
+  <div class="fbrand">The Lifted Society</div>
+  <div>Clear, honest books for people serious about building a better life.</div>
+  <div style="margin-top:14px">
+    Facebook: The Lifted Society &nbsp;&middot;&nbsp;
+    Instagram: @theliftedsociety1 &nbsp;&middot;&nbsp;
+    <a href="mailto:info@theliftedsociety.org">info@theliftedsociety.org</a>
+  </div>
+  <div style="margin-top:14px;opacity:.6">
+    &copy; The Lifted Society. All rights reserved.</div>
+</footer>
+
+<div class="sticky" id="stickybar">
+  <div class="sticky-info"><b>The Dream Killer</b><br>Instant download &middot; GHS&nbsp;45</div>
+  <a class="btn" href="https://paystack.shop/pay/the-dream-killer" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout');"><span class="btn-label">Get the Book</span><span class="btn-price">Instant download &middot; GHS&nbsp;45</span></a>
+</div>
+
+<script>
+(function(){
+  var bar=document.getElementById('stickybar');
+  var hero=document.querySelector('.hero');
+  if(!bar||!hero)return;
+  function check(){
+    if(window.scrollY > hero.offsetHeight - 80) bar.classList.add('show');
+    else bar.classList.remove('show');
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  check();
+})();
+</script>
+
+</body>
+</html>

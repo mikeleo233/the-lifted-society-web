@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Thank you | The Dream Killer</title>
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2895366437482752');
+fbq('track', 'PageView');
+fbq('track', 'Purchase');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2895366437482752&ev=Purchase&noscript=1"/></noscript>
+<!-- End Facebook Pixel -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared/styles.css">
+<style>
+:root{
+  --navy:#0F1B2D; --navy-soft:#16263c; --dawn:#EDE3D0;
+  --ember:#C26B4A; --ember-bright:#d8794f;
+  --ink:#1c2331; --paper:#f6f1e7; --muted:#6b7280;
+}
+html,body{background:var(--paper);color:var(--ink);}
+body{font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.serif{font-family:"Fraunces",Georgia,serif;}
+
+/* ---- top bar: brand name only, no nav (kit 5a) ---- */
+.topbar{background:var(--navy);color:var(--dawn);
+  text-align:center;padding:14px 20px;
+  font-family:"Fraunces",serif;font-size:14px;
+  letter-spacing:.22em;text-transform:uppercase;}
+
+/* ---- HERO: the cover is the hero, full-bleed dark ---- */
+.hero{background:var(--navy);color:var(--dawn);
+  padding:48px 24px 72px;text-align:center;position:relative;
+  overflow:hidden;}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;
+  height:180px;background:linear-gradient(to top,
+  rgba(194,107,74,.18),transparent);pointer-events:none;}
+.hero-cover{width:min(330px,74vw);margin:0 auto 34px;
+  box-shadow:0 30px 70px -20px rgba(0,0,0,.8),
+  0 0 0 1px rgba(237,227,208,.08);}
+.hero-hook{font-family:"Fraunces",serif;font-size:clamp(23px,5.4vw,33px);
+  line-height:1.28;font-weight:500;max-width:16ch;margin:0 auto 14px;}
+.hero-sub{color:#9fb0c4;font-size:15px;font-style:italic;
+  max-width:34ch;margin:0 auto 34px;}
+.hero-author{font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  color:#7d8 da3;}
+
+/* ---- buttons: rounded, conspicuous, with a periodic shine sweep ---- */
+.btn{position:relative;display:inline-block;
+  background:var(--ember);color:#fff;
+  font-weight:700;font-size:17px;letter-spacing:.02em;
+  padding:19px 44px;text-decoration:none;border:0;cursor:pointer;
+  border-radius:999px;overflow:hidden;
+  box-shadow:0 10px 26px -6px rgba(194,107,74,.6),
+    0 0 0 0 rgba(216,121,79,.5);
+  transition:background .15s ease,transform .15s ease,
+    box-shadow .15s ease;
+  animation:btnpulse 3.4s ease-in-out infinite;}
+.btn:hover{background:var(--ember-bright);transform:translateY(-2px);
+  box-shadow:0 14px 32px -6px rgba(194,107,74,.75);}
+.btn>*{position:relative;z-index:2;}
+/* the shine: a tilted light band that sweeps across on a loop */
+.btn::after{content:"";position:absolute;top:-60%;left:-75%;
+  width:45%;height:220%;z-index:1;pointer-events:none;
+  background:linear-gradient(115deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.15) 38%,
+    rgba(255,255,255,.85) 50%,
+    rgba(255,255,255,.15) 62%,
+    rgba(255,255,255,0) 100%);
+  transform:skewX(-22deg);
+  animation:btnshine 4.8s ease-in-out infinite;}
+@keyframes btnshine{
+  0%   {left:-75%;}
+  18%  {left:135%;}
+  100% {left:135%;}        /* rests off-screen between sweeps */
+}
+@keyframes btnpulse{
+  0%,100%{box-shadow:0 10px 26px -6px rgba(194,107,74,.6),
+    0 0 0 0 rgba(216,121,79,.55);}
+  50%    {box-shadow:0 10px 26px -6px rgba(194,107,74,.6),
+    0 0 0 9px rgba(216,121,79,0);}
+}
+@media(prefers-reduced-motion:reduce){
+  .btn,.btn::after{animation:none;}
+}
+.btn-price{display:block;font-size:12px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;opacity:.9;
+  margin-top:5px;}
+
+/* ---- narrow reading column for the intimate sections ---- */
+.read{max-width:620px;margin:0 auto;padding:64px 24px;}
+.read p{margin-bottom:20px;}
+.read p:last-child{margin-bottom:0;}
+.lead-in{font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ember);margin-bottom:18px;}
+.read h2{font-family:"Fraunces",serif;font-size:clamp(26px,5.5vw,36px);
+  line-height:1.22;font-weight:600;margin-bottom:22px;}
+.pull{font-family:"Fraunces",serif;font-size:22px;line-height:1.4;
+  font-style:italic;color:var(--navy);
+  border-left:3px solid var(--ember);padding-left:22px;margin:34px 0;}
+
+/* ---- full-width dark band: the cost list ---- */
+.band{background:var(--navy);color:var(--dawn);padding:66px 24px;}
+.band-inner{max-width:640px;margin:0 auto;}
+.band h2{font-family:"Fraunces",serif;font-size:clamp(26px,5.5vw,36px);
+  font-weight:600;line-height:1.22;margin-bottom:8px;}
+.band-kicker{font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ember-bright);margin-bottom:18px;}
+.cost{border-top:1px solid rgba(237,227,208,.16);
+  padding:20px 0;display:flex;gap:18px;align-items:baseline;}
+.cost:last-child{border-bottom:1px solid rgba(237,227,208,.16);}
+.cost-n{font-family:"Fraunces",serif;font-size:20px;color:var(--ember-bright);
+  flex:none;width:1.6em;}
+.cost-t{font-weight:700;}
+.cost-t span{display:block;font-weight:400;color:#9fb0c4;
+  font-size:15.5px;margin-top:3px;}
+
+/* ---- "what's inside" - offset asymmetric block ---- */
+.inside{max-width:760px;margin:0 auto;padding:64px 24px;}
+.inside h2{font-family:"Fraunces",serif;font-size:clamp(26px,5.5vw,36px);
+  font-weight:600;margin-bottom:30px;}
+.inside ul{list-style:none;margin:0;padding:0;}
+.inside li{list-style:none;border-left:2px solid var(--ember);
+  padding:6px 0 6px 22px;margin-bottom:22px;
+  margin-left:0;}
+.inside li:nth-child(even){margin-left:clamp(0px,7vw,64px);}
+.inside li b{display:block;font-family:"Fraunces",serif;
+  font-size:19px;margin-bottom:3px;color:var(--navy);}
+.inside li span{color:#444;font-size:16.5px;}
+
+/* ---- who this is for ---- */
+.forwho{max-width:760px;margin:0 auto;padding:24px 24px 64px;}
+.forwho h2{font-family:"Fraunces",serif;font-size:clamp(26px,5.5vw,36px);
+  font-weight:600;margin-bottom:10px;}
+.forwho-lead{color:#444;margin-bottom:34px;}
+.forwho-grid{display:flex;flex-direction:column;gap:0;}
+.who{display:flex;gap:18px;padding:24px 0;
+  border-top:1px solid rgba(15,27,45,.14);}
+.who:last-child{border-bottom:1px solid rgba(15,27,45,.14);}
+.who-mark{font-family:"Fraunces",serif;font-style:italic;
+  font-size:30px;color:var(--ember);flex:none;width:1.3em;
+  line-height:1;}
+.who-body b{font-family:"Fraunces",serif;font-size:19px;
+  color:var(--navy);display:block;margin-bottom:5px;}
+.who-body span{color:#444;font-size:16.5px;}
+
+/* ---- read it together (gift band) ---- */
+.together{background:var(--ember);color:#fff;padding:64px 24px;}
+.together-inner{max-width:620px;margin:0 auto;}
+.together-kicker{font-size:13px;letter-spacing:.2em;
+  text-transform:uppercase;color:#ffe6d8;margin-bottom:16px;}
+.together h2{font-family:"Fraunces",serif;
+  font-size:clamp(26px,5.5vw,36px);font-weight:600;
+  line-height:1.22;margin-bottom:20px;}
+.together p{margin-bottom:18px;color:#fdeee6;}
+.together p:last-of-type{margin-bottom:0;}
+.together .why{margin:24px 0 0;}
+.together .why li{display:flex;gap:12px;padding:10px 0;
+  font-size:16px;border-top:1px solid rgba(255,255,255,.22);}
+.together .why li:last-child{border-bottom:1px solid rgba(255,255,255,.22);}
+.together .why li::before{content:"\2022";color:#fff;font-weight:700;
+  flex:none;font-size:20px;line-height:1.2;}
+
+/* ---- buy band ---- */
+.buy{background:var(--navy-soft);color:var(--dawn);
+  padding:70px 24px;text-align:center;}
+.buy h2{font-family:"Fraunces",serif;font-size:clamp(27px,6vw,38px);
+  font-weight:600;line-height:1.2;max-width:18ch;margin:0 auto 16px;}
+.buy p{color:#9fb0c4;max-width:40ch;margin:0 auto 32px;font-size:16px;}
+.assure{max-width:430px;margin:34px auto 0;text-align:left;
+  list-style:none;padding:0;}
+.assure li{list-style:none;display:flex;gap:12px;padding:9px 0;
+  font-size:15px;color:#c7d2e0;}
+.assure li::before{content:"\2713";color:var(--ember-bright);
+  font-weight:700;flex:none;}
+.steps{max-width:430px;margin:30px auto 0;text-align:left;
+  font-size:15px;color:#9fb0c4;list-style:none;
+  counter-reset:s;padding:0;}
+.steps li{list-style:none;padding:7px 0 7px 34px;position:relative;
+  counter-increment:s;}
+.steps li::before{content:counter(s);position:absolute;left:0;top:6px;
+  width:22px;height:22px;background:var(--ember);color:#fff;
+  font-size:12px;font-weight:700;display:flex;align-items:center;
+  justify-content:center;}
+
+/* ---- closing line ---- */
+.closing{background:var(--paper);text-align:center;
+  padding:60px 24px;}
+.closing p{font-family:"Fraunces",serif;font-style:italic;
+  font-size:clamp(20px,4.6vw,26px);line-height:1.4;
+  color:var(--navy);max-width:22ch;margin:0 auto;}
+
+/* ---- footer: minimal (kit 5a) ---- */
+.foot{background:var(--navy);color:#7d8da3;text-align:center;
+  padding:40px 24px;font-size:13px;}
+.foot .fbrand{font-family:"Fraunces",serif;color:var(--dawn);
+  letter-spacing:.2em;text-transform:uppercase;font-size:14px;
+  margin-bottom:8px;}
+.foot a{color:var(--ember-bright);text-decoration:none;}
+
+/* ---- sticky mobile order bar (revealed after hero) ---- */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--navy);border-top:1px solid rgba(237,227,208,.14);
+  padding:11px 16px;display:flex;align-items:center;gap:14px;
+  box-shadow:0 -8px 30px rgba(0,0,0,.4);
+  transform:translateY(110%);transition:transform .25s ease;}
+.sticky.show{transform:translateY(0);}
+.sticky-info{color:var(--dawn);font-size:13px;line-height:1.3;flex:1;}
+.sticky-info b{font-family:"Fraunces",serif;font-size:15px;}
+.sticky .btn{padding:14px 22px;font-size:14px;flex:none;}
+.sticky .btn .btn-price{display:none;}
+@media(min-width:880px){.sticky{display:none;}}
+body{padding-bottom:0;}
+
+.ty{max-width:560px;margin:0 auto;padding:70px 24px;text-align:center;}
+.ty-check{width:64px;height:64px;margin:0 auto 26px;
+  background:var(--ember);color:#fff;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px;}
+.ty h1{font-family:"Fraunces",serif;font-size:clamp(28px,6vw,40px);
+  font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:14px;}
+.ty-sub{color:var(--muted);margin-bottom:36px;}
+.dl{display:flex;flex-direction:column;gap:14px;
+  max-width:360px;margin:0 auto 30px;}
+.dl a{background:var(--navy);color:var(--dawn);text-decoration:none;
+  padding:18px 26px;display:flex;justify-content:space-between;
+  align-items:center;font-weight:700;border-radius:14px;
+  transition:background .15s ease,transform .15s ease;}
+.dl a:hover{background:var(--navy-soft);transform:translateY(-2px);}
+.dl a span{font-weight:400;font-size:13px;color:#9fb0c4;}
+.ty-note{background:#fff;border-left:3px solid var(--ember);
+  padding:20px 22px;text-align:left;font-size:15.5px;
+  max-width:420px;margin:0 auto 30px;color:#444;}
+.ty-note b{font-family:"Fraunces",serif;color:var(--navy);}
+.ty-social{font-size:14px;color:var(--muted);}
+.ty-social a{color:var(--ember);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<div class="topbar">The Lifted Society</div>
+
+<main class="ty">
+  <div class="ty-check">&#10003;</div>
+  <h1>Your payment is confirmed. Thank you.</h1>
+  <p class="ty-sub">Your copy of <em>The Dream Killer</em> is ready below.
+  Download it now. It is yours to keep.</p>
+
+  <div class="dl">
+    <a href="https://files.theliftedsociety.org/The%20Dream%20Killer%20-%20The%20Lifted%20Society.pdf">Download PDF
+      <span>Best for phones &amp; printing</span></a>
+    <a href="https://files.theliftedsociety.org/The%20Dream%20Killer%20-%20The%20Lifted%20Society.epub">Download EPUB
+      <span>Best for e-readers &amp; apps</span></a>
+  </div>
+
+  <div class="ty-note">
+    <b>Which file should I choose?</b><br>
+    If you are unsure, choose the PDF. It opens on any phone or
+    computer. Choose the EPUB if you read on a Kindle, Apple Books, or
+    a dedicated reading app, as the text adjusts to your screen.
+  </div>
+
+  <div class="ty-note">
+    <b>How to begin.</b><br>
+    Do not rush it. Read the short Author's Note first, then one
+    chapter at a time, and do the &ldquo;Walk It Out&rdquo; step at the
+    end of each chapter before moving on. The book is a walk, not a
+    race.
+  </div>
+
+  <p class="ty-social">
+    Stay connected. Facebook: The Lifted Society &nbsp;&middot;&nbsp;
+    Instagram: <a href="https://instagram.com/theliftedsociety1">@theliftedsociety1</a>
+    <br>Need help with your download?
+    <a href="mailto:info@theliftedsociety.org">info@theliftedsociety.org</a>
+  </p>
+</main>
+
+</body>
+</html>
